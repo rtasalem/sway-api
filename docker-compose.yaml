@@ -1,0 +1,28 @@
+services:
+  sway-api:
+    build: .
+    image: sway-api:1.0.0
+    container_name: sway-api
+    ports:
+      - "3100:3100"
+    volumes:
+      - ./app:/home/node/app
+      - ./package.json:/home/node/package.json
+    depends_on:
+      - sway-cosmos-db
+    environment:
+      COSMOS_ENDPOINT: "${COSMOS_ENDPOINT}"
+      COSMOS_KEY: "${COSMOS_KEY}"
+      COSMOS_DATABASE: "${COSMOS_DATABASE}"
+      COSMOS_CONTAINER: "${COSMOS_CONTAINER}"
+
+  sway-cosmos-db:
+    image: cosmos-db
+    environment:
+      COSMOS_ENDPOINT: "${COSMOS_ENDPOINT}"
+      COSMOS_KEY: "${COSMOS_KEY}"
+      COSMOS_DATABASE: "${COSMOS_DATABASE}"
+      COSMOS_CONTAINER: "${COSMOS_CONTAINER}"
+
+volumes:
+  sway-cosmos-db:
