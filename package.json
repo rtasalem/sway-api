@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "A GraphQL API featuring data persistence in Azure Cosmos DB acting as the data access layer for Sway, a social media platform.",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rtasalem/sway-api.git"
@@ -17,6 +14,8 @@
   },
   "homepage": "https://github.com/rtasalem/sway-api#readme",
   "dependencies": {
+    "@apollo/server": "4.10.4",
+    "@as-integrations/hapi": "2.0.1",
     "@hapi/hapi": "21.3.10"
   },
   "devDependencies": {
