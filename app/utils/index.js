@@ -1,3 +1,5 @@
-const { convertCosmosTimestamp } = require('./convert-cosmos-timestamp')
+const { generateTimestamp } = require('./generateTimestamp')
 
-module.exports = { convertCosmosTimestamp }
+module.exports = {
+  generateTimestamp
+}

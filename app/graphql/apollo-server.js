@@ -1,9 +1,9 @@
 const { ApolloServer } = require('@apollo/server')
-const { typeDefs } = require('./schema')
+const { typeDefs, resolvers } = require('./schema')
 
 const apolloServer = new ApolloServer({
-  typeDefs
-  // resolvers
+  typeDefs,
+  resolvers
 })
 
 module.exports = { apolloServer }
